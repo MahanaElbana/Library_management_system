@@ -67,11 +67,14 @@ class ManagerPersentaionLayer {
         // RR.InterfaceReturnReservation();
       } else if (manage == "X" ) {
         HomePageState = false;
+
+        exit(1);
       } else {
         print(Colors.Red +
             "Entered data is not correct , choose from list ----!" +
             Colors.Red);
       }
     }
+    print("exit");
   }
 }
