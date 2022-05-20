@@ -33,8 +33,8 @@ class BeneficiaryInterface {
       } else if (manage == "U") {
         // BeneficiaryRepo.SearchBenefitiary();
       } else if (manage == "TX") {
-        // this.manageState = false;
-        // InterfaceManger.HomePageState = false;
+        this.manageState = false;
+         //InterfaceManger.HomePageState = false;
       } else if (manage == "X") {
         //InterfaceManger.HomePageDecoration();
         //  this.manageState = false;

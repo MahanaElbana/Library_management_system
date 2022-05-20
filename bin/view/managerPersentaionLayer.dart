@@ -2,6 +2,7 @@ import 'dart:io';
 import '../components/listedPannel.dart';
 import '../components/titlePannel.dart';
 import '../constants/colors.dart';
+import '../controller/databaseConnect.dart';
 import 'beneficiaryInterface.dart';
 
 class ManagerPersentaionLayer {
@@ -40,15 +41,18 @@ class ManagerPersentaionLayer {
     print("\n");
     HomePageDecoration();
     while (HomePageState) {
-      var manage = stdin.readLineSync();
+      var manage =  stdin.readLineSync();
       if (manage == "Em") {
+        //await readAllUsers();
       } else if (manage == "Be") {
         BeneficiaryInterface be = new BeneficiaryInterface();
         be.interfaceBeneficiary();
       } else if (manage == "Bo") {
-        // BookInterface bI = new BookInterface();
-        // bI.InterfaceBook();
-      } else if (manage == "Lo") {
+        // await insertUsers();
+      } else if (manage == "x") {
+        ManagerPersentaionLayer.HomePageState = false;
+        print(HomePageState);
+        break;
         // LocationInterface lo = new LocationInterface();
         // lo.InterfaceLocation();
       } else if (manage == "Lg") {
@@ -61,7 +65,7 @@ class ManagerPersentaionLayer {
       } else if (manage == "RR") {
         // ReturnReservationInterface RR = new ReturnReservationInterface();
         // RR.InterfaceReturnReservation();
-      } else if (manage == "X" || manage == "x") {
+      } else if (manage == "X" ) {
         HomePageState = false;
       } else {
         print(Colors.Red +
