@@ -36,20 +36,20 @@ class ManagerPersentaionLayer {
     pannelItem("^" * 68, Colors.Green);
   }
 
-  static void MainLibrary() {
+  static void MainLibrary() async{
     titlePannel("Library Management System", Colors.Magenta, 100);
     print("\n");
     HomePageDecoration();
     while (HomePageState) {
-      var manage =  stdin.readLineSync();
+      var manage = stdin.readLineSync();
       if (manage == "Em") {
-        //await readAllUsers();
+        await readAllUsers();
       } else if (manage == "Be") {
-        BeneficiaryInterface be = new BeneficiaryInterface();
+        BeneficiaryInterface be = BeneficiaryInterface();
         be.interfaceBeneficiary();
       } else if (manage == "Bo") {
-        // await insertUsers();
-      } else if (manage == "x") {
+         await insertUsers();
+      } else if (manage == "Lo") {
         ManagerPersentaionLayer.HomePageState = false;
         print(HomePageState);
         break;
@@ -65,14 +65,13 @@ class ManagerPersentaionLayer {
       } else if (manage == "RR") {
         // ReturnReservationInterface RR = new ReturnReservationInterface();
         // RR.InterfaceReturnReservation();
-      } else if (manage == "X" ) {
+      } else if (manage == "X" ||manage=="x") {
         HomePageState = false;
-
+        await closeConnection();
         exit(1);
       } else {
-        print(Colors.Red +
-            "Entered data is not correct , choose from list ----!" +
-            Colors.Red);
+        print(
+            '${Colors.Red}Entered data is not correct , choose from list ----!${Colors.Red}');
       }
     }
     print("exit");

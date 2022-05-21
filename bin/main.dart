@@ -1,15 +1,17 @@
+import 'constants/colors.dart';
 import 'controller/databaseConnect.dart';
 import 'view/managerPersentaionLayer.dart';
 
 void main() async {
   try {
-    await connection.open();
+    await openConnection();
     
   } catch (e) {
-    print("connection is interruption , try again ");
+    print("${Colors.Red}connection is interrupted , try again !${Colors.Red}");
   }
-   if(!connection.isClosed){
-     ManagerPersentaionLayer.MainLibrary();
-   }
+  if(!connection.isClosed){
+    ManagerPersentaionLayer.MainLibrary();
+    // print(connection.isClosed);
+  }
   //print("object");
 }
