@@ -24,3 +24,5 @@ docker run -itd --name dartapp -p 5433:5432 -e POSTGRES_NAME=dart -e POSTGRES_US
 ```
 172.17.0.2
 ```
+# future
+-- note connection can interruption when you add name or national number from terminal  (reliable)
